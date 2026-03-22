@@ -78,7 +78,7 @@ export default function LandingPage() {
             </button>
           </form>
           {status === 'error' && (
-            <p className="mt-3 text-sm text-red-600">Please enter a valid email address.</p>
+            <p className="mt-3 text-sm text-red-600">Something went wrong. Please try again.</p>
           )}
           <p className="mt-4 text-sm text-gray-500">Free 14-day trial · No credit card required</p>
         </div>

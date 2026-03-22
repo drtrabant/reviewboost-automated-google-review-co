@@ -114,17 +114,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const businessName = validateBusinessName(rawBusinessName);
-    if (!businessName) {
-      return NextResponse.json(
-        {
-          success: false,
-          error:
-            "Please enter your business name (up to 200 characters)",
-        },
-        { status: 422 }
-      );
-    }
+    const businessName = rawBusinessName ? (validateBusinessName(rawBusinessName) ?? '') : '';
 
     // Check for duplicate email
     const entries = await readWaitlist();
